@@ -1,0 +1,11 @@
+{
+    "name": "saschakoch/sync",
+    "description": "KOMPASS SYNC",
+    "type": "php",
+    "autoload": {
+        "psr-4": {
+            "Saschakoch\\Sync\\": "src/"
+        }
+    },
+    "require": {}
+}
