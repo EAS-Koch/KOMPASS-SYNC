@@ -20,6 +20,4 @@ jobs:
           ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
       - name: Deploy to server
         run: |
-          echo "Starting deployment..."
-          ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no ubuntu@51.38.99.142 "cd /var/www/html/kompass && git pull origin master && composer update"
-          echo "Deployment completed."
+          ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "cd /var/www/html/kompass && git pull origin master && composer update"
