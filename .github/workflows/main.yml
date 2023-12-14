@@ -13,6 +13,10 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v2
 
+      - name: Set Working Directory
+        run: cd /var/www/html/kompass
+        working-directory: ${{ github.workspace }}
+
       - name: Execute Deployment Script
         run: |
           bash deploy.sh
