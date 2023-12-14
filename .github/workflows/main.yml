@@ -13,10 +13,8 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v2
 
-      - name: Execute Deployment Script
-        uses: appleboy/ssh-action@v0.1.10
-        with:
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          script: |
-            ssh ubuntu@51.38.99.142 "cd /var/www/html/kompass && git pull && composer update"
-            # Add other necessary environment variables
+      - name: SSH into Server and Update
+        run: |
+          ssh -i <(echo "$SSH_PRIVATE_KEY") user@your_server_ip "cd /var/www/html/kompass && git pull && composer update"
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
