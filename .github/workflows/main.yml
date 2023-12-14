@@ -15,7 +15,5 @@ jobs:
 
       - name: Execute Deployment Script
         run: |
-          ssh -i <(echo "$SSH_PRIVATE_KEY") ubuntu@51.38.99.142 "cd /var/www/html/kompass && git pull && composer update"
+          ssh -i ${{ secrets.SSH_PRIVATE_KEY }} ubuntu@51.38.99.142 "cd /var/www/html/kompass && git pull && composer update"
           # Add other necessary environment variables
-        env:
-          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
