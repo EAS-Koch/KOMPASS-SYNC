@@ -15,7 +15,6 @@ jobs:
 
       - name: Set Working Directory
         run: cd /var/www/html/kompass
-        working-directory: ${{ github.workspace }}
 
       - name: Execute Deployment Script
         run: |
