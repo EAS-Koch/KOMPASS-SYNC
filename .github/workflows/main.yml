@@ -15,6 +15,6 @@ jobs:
 
       - name: SSH into Server and Update
         run: |
-          ssh -i <(echo "$SSH_PRIVATE_KEY") user@your_server_ip "cd /var/www/html/kompass && git pull && composer update"
+          ssh -i <(echo "$SSH_PRIVATE_KEY") ubuntu@51.38.99.142 "cd /var/www/html/kompass && git pull && composer update"
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
