@@ -1,5 +1,5 @@
 #!/bin/bash
 
-cd /var/www/html/your_project || exit
+cd /var/www/html/kompass || exit
 git pull
 composer update
