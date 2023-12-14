@@ -21,5 +21,5 @@ jobs:
       - name: Deploy to server
         run: |
           echo "Starting deployment..."
-          ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no ubuntu@51.38.99.142 "cd /var/www/html/kompass && git pull origin main && composer update"
+          ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no ubuntu@51.38.99.142 "cd /var/www/html/kompass && git pull origin master && composer update"
           echo "Deployment completed."
