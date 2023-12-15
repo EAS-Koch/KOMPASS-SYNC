@@ -9,6 +9,7 @@ echo "Project setup for CI/CD successfully";
 echo "<br>";
 echo "Test";
 
+
 //$api = ApiRequest::getInstance();
 //$api->getASchemaForMultipleTables();
 //$api->getASchemaForASingleDatabase();
