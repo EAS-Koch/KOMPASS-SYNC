@@ -7,5 +7,7 @@
             "Saschakoch\\Sync\\": "src/"
         }
     },
-    "require": {}
+    "require": {
+        "ext-curl": "*"
+    }
 }

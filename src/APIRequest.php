@@ -6,18 +6,17 @@ namespace Saschakoch\Sync;
 
 class ApiRequest {
     private static $instance;
-    private $url;
+    private $baseUrl;
     private $token;
     private $teamId;
-    private $databaseId;
+    //private $databaseId;
     private function __construct()
     {
         // Private constructor to prevent instantiation
         // https://kompass.ninoxdb.de/v1/teams/{ TEAM ID }/databases/{ DATABASE ID }/tables
-        $this->url = 'https://example.com/api/endpoint';
-        $this->teamId = 'xdkvuahkuhbw0zn2k';
-        $this->databaseId = 'sgcf56tlx4t8';
         $this->token = 'OGYwYjFmZTQtN2QwMy01N2Y5LTk2ODktOTI2NmMxODQwNmI5';
+        $this->teamId = 'xdkvuahkuhbw0zn2k';
+        $this->baseUrl = 'https://kompass.ninoxdb.de/v1/teams/'.$this->teamId."/";
     }
 
     public static function getInstance() {
@@ -27,8 +26,8 @@ class ApiRequest {
         return self::$instance;
     }
 
-    public function getJsonResult() {
-        $ch = curl_init($this->url);
+    public function getJsonResult($url) {
+        $ch = curl_init($url);
 
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_HTTPHEADER, [
